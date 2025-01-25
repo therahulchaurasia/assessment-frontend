@@ -2,6 +2,7 @@ import { Box, Heading } from "@chakra-ui/react"
 import { useDrop } from "react-dnd"
 import SingleTask from "./SingleTask"
 import { Task } from "@/types/db"
+import { useEffect, useRef } from "react"
 
 interface ColumnProps {
   title: string
@@ -20,9 +21,17 @@ export default function Column({
     accept: "task",
     drop: (item: { id: string }) => moveTask(item.id, status),
   })
+  const boxRef = useRef<HTMLDivElement>(null)
+
+  // Combine refs: Chakra's `Box` with `react-dnd`'s `drop` ref
+  useEffect(() => {
+    if (boxRef.current) {
+      drop(boxRef.current)
+    }
+  }, [drop])
   return (
     <Box
-      ref={drop}
+      ref={boxRef}
       bg="gray.100"
       p={4}
       borderRadius="lg"
