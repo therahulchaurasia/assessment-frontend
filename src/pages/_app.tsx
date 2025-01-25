@@ -1,6 +1,18 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import AuthWrapper from "@/components/wrapper/AuthWrapper"
+import { theme } from "@/styles/theme"
+import { ChakraProvider } from "@chakra-ui/react"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import type { AppProps } from "next/app"
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const queryClient = new QueryClient()
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ChakraProvider theme={theme}>
+        <AuthWrapper>
+          <Component {...pageProps} />
+        </AuthWrapper>
+      </ChakraProvider>
+    </QueryClientProvider>
+  )
 }
