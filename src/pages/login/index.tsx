@@ -64,7 +64,7 @@ export default function LoginPage() {
       const cookieAge = generateDays(31)
       const data = res.data
       if (res.status === 200) {
-        setCookie("authToken",  data.token, { maxAge: cookieAge })
+        setCookie("authToken", data.token, { maxAge: cookieAge })
         toast({
           title: "Successful Login",
           description: "Welcome back to our platform.",
@@ -158,7 +158,12 @@ export default function LoginPage() {
               </InputGroup>
               <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
             </FormControl>
-            <Button type="submit" isLoading={isSubmitting}>
+            <Button
+              type="submit"
+              isLoading={isSubmitting}
+                  variant={"solid"}
+			colorScheme="blue"
+            >
               Submit
             </Button>
             <Flex justifyContent={"center"}>

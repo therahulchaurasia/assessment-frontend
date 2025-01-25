@@ -6,5 +6,8 @@ const endpoints = {
   my: {
     index: "my/getMe",
   },
+  tasks: {
+    index: "/tasks",
+  },
 }
 export default endpoints

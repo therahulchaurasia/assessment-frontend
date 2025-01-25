@@ -41,23 +41,6 @@ const components = {
       marginBottom: 2,
     },
   },
-  Button: {
-    variants: {
-      solid: {
-        bg: "black",
-        color: "white",
-        _hover: {
-          bg: "gray.700",
-        },
-        _loading: {
-          _hover: {
-            bg: "gray.700",
-          },
-          bg: "gray.700",
-        },
-      },
-    },
-  },
 }
 
 export const theme = extendTheme({

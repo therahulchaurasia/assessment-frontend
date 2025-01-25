@@ -1,4 +1,6 @@
+import TaskBoard from "@/components/blocks/TaskBoard"
 import MainLayout from "@/components/wrapper/MainLayout"
+import { Box, Heading } from "@chakra-ui/react"
 import Head from "next/head"
 
 export default function Home() {
@@ -11,7 +13,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
-        <h1>Home</h1>
+        <Box mb={4}>
+          <Heading as="h1" size="lg" fontWeight="bold">
+            Task Management
+          </Heading>
+        </Box>
+        <TaskBoard />
       </MainLayout>
     </>
   )

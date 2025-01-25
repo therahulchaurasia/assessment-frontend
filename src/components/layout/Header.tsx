@@ -1,18 +1,17 @@
+import useAuth from "@/hooks/useAuth"
+import {
+	Box,
+	Flex,
+	IconButton,
+	Text,
+	useDisclosure,
+	VStack
+} from "@chakra-ui/react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import {
-  Box,
-  Button,
-  Flex,
-  HStack,
-  Text,
-  useDisclosure,
-  VStack,
-  IconButton,
-} from "@chakra-ui/react"
+import { FaPowerOff } from "react-icons/fa6"
 import { IoMdCloseCircle } from "react-icons/io"
 import { IoMenu } from "react-icons/io5"
-import useAuth from "@/hooks/useAuth"
 
 export default function Header() {
   const { logoutFn } = useAuth()
@@ -39,38 +38,16 @@ export default function Header() {
             mylittleapp
           </Text>
 
-          {/* Center: Navigation links */}
-          <HStack as="nav" spacing={8} display={{ base: "none", md: "flex" }}>
-            {navLinks.map((link) => (
-              <Box
-                key={link.href}
-                as={Link}
-                href={link.href}
-                px={3}
-                py={2}
-                rounded="md"
-                fontSize="sm"
-                fontWeight="medium"
-                color={pathname === link.href ? "gray.900" : "gray.700"}
-                bg={pathname === link.href ? "gray.100" : "transparent"}
-                _hover={{ color: "gray.900", bg: "gray.50" }}
-              >
-                {link.label}
-              </Box>
-            ))}
-          </HStack>
-
           {/* Right side: Logout button */}
           <Flex align="center">
-            <Button
-              variant="outline"
+            <IconButton
+              aria-label="Logout-btn"
               size="sm"
+              icon={<FaPowerOff />}
               onClick={() => {
                 logoutFn()
               }}
-            >
-              Logout
-            </Button>
+            />
           </Flex>
 
           {/* Mobile menu button */}

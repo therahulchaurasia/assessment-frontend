@@ -2,7 +2,6 @@ import { CardProps, Flex, FlexProps } from "@chakra-ui/react"
 import React from "react"
 import MyContainer from "./MyContainer"
 import Header from "../layout/Header"
-import useAuth from "@/hooks/useAuth"
 
 type Props = {
   children: React.ReactNode
@@ -15,8 +14,6 @@ export default function MainLayout({
   containerProps,
   cardProps,
 }: Props) {
-  const { isAuth } = useAuth()
-  console.log(isAuth)
   return (
     <Flex minHeight="100vh" minW={"100%"} direction={"column"}>
       <Header />

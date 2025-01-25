@@ -12,6 +12,12 @@ export type registrationData = {
   password: string
 }
 
+export type TaskData = {
+  name: string
+  description: string
+  status: string
+}
+
 export interface CustomError extends Error {
   response: {
     data: {
@@ -19,6 +25,5 @@ export interface CustomError extends Error {
     }
   }
 }
-
 
 export interface AuthToken extends JwtPayload, User {}

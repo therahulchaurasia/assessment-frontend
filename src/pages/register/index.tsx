@@ -237,7 +237,12 @@ export default function RegisterPage() {
                 {formik.errors.confirmPassword}
               </FormErrorMessage>
             </FormControl>
-            <Button type="submit" isLoading={isSubmitting}>
+            <Button
+              type="submit"
+              isLoading={isSubmitting}
+              variant={"solid"}
+              colorScheme="blue"
+            >
               Submit
             </Button>
             <Flex justifyContent={"center"}>
