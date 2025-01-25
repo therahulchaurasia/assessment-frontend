@@ -1,40 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Task Management Website
 
-## Getting Started
+Welcome to the **Task Management Website**! This platform allows users to manage their tasks effectively by categorizing them into different statuses and updating them in real-time.
 
-First, run the development server:
+## Live Demo
+
+Access the website here: [Task Management Website](https://assessment-frontend-eta.vercel.app/login)
+
+## Features
+
+### 1. **Authentication**
+
+- **Login Page**: Securely log in with your credentials.
+- **Register Page**: Create a new account to start using the platform.
+
+### 2. **Task Management**
+
+- **Add Tasks**: Create tasks by providing the following details:
+  - Task name
+  - Description
+  - Status (Pending, Ongoing, or Completed)
+- **Drag and Drop**: Easily move tasks between columns (Pending, Ongoing, Completed) to update their status.
+- **Real-time Updates**: All changes are instantly saved to the backend.
+
+### 3. **Task Board**
+
+- Tasks are displayed in a **three-column layout**:
+  - **Pending**
+  - **Ongoing**
+  - **Completed**
+- The drag-and-drop interface makes it intuitive to update task statuses.
+
+## Technology Stack
+
+### Frontend
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: Chakra UI V2 (depending on preferences)
+- **Drag-and-Drop**: `react-dnd`
+
+### Hosting
+
+- **Frontend**: Hosted on [Vercel](https://vercel.com/)
+
+## Installation Guide
+
+### Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-repository-url.git
+cd your-repository
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install Dependencies
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+# Install frontend dependencies
+cd frontend
+npm install
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Environment Variables
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+NEXT_PUBLIC_SERVER_ENDPOINT=https://assessment-backend-y7x7.onrender.com/api/v1
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Run Locally
 
-## Learn More
+```bash
+cd frontend
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## API Endpoints
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### Authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `POST /api/v1/auth/login`: Log in with credentials.
+- `POST /api/v1/auth/register`: Register a new user.
 
-## Deploy on Vercel
+### Tasks
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `GET /api/v1/tasks`: Fetch all tasks.
+- `POST /api/v1/tasks`: Create a new task.
+- `PATCH /api/v1/tasks/:id`: Update a task's status.
+- `DELETE /api/v1/tasks/:id`: Delete a task.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Future Improvements
+
+- Add a search and filter option for tasks.
+- Implement task deadlines and reminders.
+- Add user profile and settings.
+- Enhance the UI with animations and responsiveness.
