@@ -100,7 +100,7 @@ export default function SingleTask({ id, task }: TaskProps) {
           onClick={onOpen}
         />
       </Box>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered={true}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Delete Task</ModalHeader>

@@ -51,7 +51,14 @@ export default function TaskBoard() {
         >
           Create New Task
         </Button>
-        <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={4}>
+        <Grid
+          templateColumns={{
+            base: "1fr",
+            md: "repeat(2,1fr)",
+            lg: "repeat(3, 1fr)",
+          }}
+          gap={4}
+        >
           <Column
             title="Pending"
             status="pending"
